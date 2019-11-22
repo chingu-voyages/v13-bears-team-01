@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
-  const [outputText, setOutputText] = useState('Welcome to Location Task App')
+  const [outputText, setOutputText] = useState('Welcome to Location Reminder App')
   return (
     <View style={styles.container}>
       <Text>{outputText}</Text>
