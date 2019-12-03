@@ -1,13 +1,19 @@
 import React from 'react'
-import CreateReminder from './pages/create-reminder-page/CreateReminder'
-import './App.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-function App () {
-  return (
-    <div className='App'>
-      <CreateReminder />
-    </div>
-  )
-}
+import HomePage from './pages/home-page/HomePage'
+import CreateReminder from './pages/create-reminder-page/CreateReminder'
+const App = () => (
+  <Router>
+    <Switch>
+      <Route path='/' exact>
+        <HomePage />
+      </Route>
+      <Route path='/create'>
+        <CreateReminder />
+      </Route>
+    </Switch>
+  </Router>
+)
 
 export default App
