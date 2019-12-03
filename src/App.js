@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateReminder from './pages/CreateReminder/CreateReminder'
+import CreateReminder from './pages/create-reminder-page/CreateReminder'
 import './App.css'
 
 function App () {

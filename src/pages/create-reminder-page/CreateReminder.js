@@ -1,5 +1,5 @@
 import React from 'react'
-import ReminderForm from '../../components/ReminderForm/ReminderForm'
+import ReminderForm from '../../components/reminder-form/ReminderForm'
 import { Container, Header } from 'semantic-ui-react'
 
 const CreateReminder = () => {
