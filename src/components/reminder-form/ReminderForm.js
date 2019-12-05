@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 import DatePicker from 'react-date-picker'
 import TimePicker from 'react-time-picker'
+
 const ReminderForm = (props) => {
-  const [text, setText] = useState('')
-  const [date, setDate] = useState(null)
-  const [time, setTime] = useState(null)
-  const [location, setLocation] = useState('')
-  const [list, setList] = useState('')
+  const [text, setText] = useState(props.reminder ? props.reminder.text : '')
+  const [date, setDate] = useState(props.reminder ? props.reminder.date : null)
+  const [time, setTime] = useState(props.reminder ? props.reminder.time : null)
+  const [location, setLocation] = useState(props.reminder ? props.reminder.location : '')
+  const [list, setList] = useState(props.reminder ? props.reminder.list : '')
   const [isCompleted, setIsCompleted] = useState(false)
 
-  const addReminder = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault()
     setIsCompleted(false)
     props.onSubmit({ text, date, time, location, list, isCompleted })
@@ -66,7 +67,7 @@ const ReminderForm = (props) => {
               />
             </Segment>
           </Segment>
-          <Button className='button' fluid size='medium' onClick={addReminder}>Done</Button>
+          <Button className='button' fluid size='medium' onClick={onSubmit}>Done</Button>
         </Form>
       </Grid.Column>
     </Grid>
