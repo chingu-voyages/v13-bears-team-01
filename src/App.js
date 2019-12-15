@@ -3,13 +3,24 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HomePage from './pages/home-page/HomePage'
 import CreateReminder from './pages/create-reminder-page/CreateReminder'
 import EditReminder from './pages/edit-reminder-page/EditReminder'
-import testReminders from './tests/fixtures/reminders'
+
 const App = () => {
   const [reminders, setReminders] = useState([])
   useEffect(() => {
-    setReminders(testReminders)
+    fetch('/api/reminders')
+      .then((response) => {
+        response.json()
+          .then((data) => {
+            if (data.error) {
+              console.error(data.error)
+            } else {
+              console.log('from fetch', data)
+              setReminders(data)
+            }
+          })
+      })
   }, [])
-  console.log('app changed', reminders)
+
   return (
     <Router>
       <Switch>

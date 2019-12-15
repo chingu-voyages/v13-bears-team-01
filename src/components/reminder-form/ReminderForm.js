@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Button, Form, Grid, Segment } from 'semantic-ui-react'
 import DateTimePicker from 'react-datetime-picker'
 
-
 const ReminderForm = (props) => {
   console.log('rf', props)
   const [text, setText] = useState(props.reminder ? props.reminder.text : '')
