@@ -16,8 +16,8 @@ const ReminderForm = (props) => {
     props.onSubmit({ text, date, location, list, isCompleted })
     setText('')
     setDate(null)
-    setLocation('')
-    setList('')
+    setLocation(null)
+    setList(null)
   }
 
   return (
