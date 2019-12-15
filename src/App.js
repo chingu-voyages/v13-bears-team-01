@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HomePage from './pages/home-page/HomePage'
 import CreateReminder from './pages/create-reminder-page/CreateReminder'
 import EditReminder from './pages/edit-reminder-page/EditReminder'
-import ReminderPage from './pages/reminder-page'
-const App = () => {
-  const [reminders, setReminders] = useState([])
-  useEffect(() => {
-    fetch('/api/reminders')
-      .then((response) => {
-        response.json()
-          .then((data) => {
-            if (data.error) {
-              console.error(data.error)
-            } else {
-              console.log('from fetch', data)
-              setReminders(data)
-            }
-          })
-      })
-  }, [])
+import ReminderPage from './pages/reminder-page/ReminderPage'
+import testReminders from './tests/fixtures/reminders'
 
+const App = () => {
   return (
     <Router>
       <Switch>
@@ -28,13 +14,13 @@ const App = () => {
           <HomePage />
         </Route>
         <Route path='/create'>
-          <CreateReminder reminders={reminders} setReminders={setReminders} />
+          <CreateReminder reminders={testReminders} />
         </Route>
         <Route path='/edit/:id'>
           <EditReminder />
         </Route>
         <Route path='/reminders/:id'>
-          <ReminderPage reminders={reminders} />
+          <ReminderPage reminders={testReminders} />
         </Route>
       </Switch>
     </Router>
