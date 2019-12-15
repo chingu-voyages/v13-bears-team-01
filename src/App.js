@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HomePage from './pages/home-page/HomePage'
 import CreateReminder from './pages/create-reminder-page/CreateReminder'
 import EditReminder from './pages/edit-reminder-page/EditReminder'
-
+import ReminderPage from './pages/reminder-page'
 const App = () => {
   const [reminders, setReminders] = useState([])
   useEffect(() => {
@@ -32,6 +32,9 @@ const App = () => {
         </Route>
         <Route path='/edit/:id'>
           <EditReminder />
+        </Route>
+        <Route path='/reminders/:id'>
+          <ReminderPage reminders={reminders} />
         </Route>
       </Switch>
     </Router>
