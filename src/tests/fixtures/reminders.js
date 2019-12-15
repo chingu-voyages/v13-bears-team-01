@@ -3,7 +3,6 @@ export default [{
   text: 'Get groceries',
   location: '15350 Roy Rogers Dr, Victorville, CA 92394',
   date: null,
-  time: null,
   list: 'Errands',
   createdAt: new Date()
 },
@@ -11,8 +10,7 @@ export default [{
   id: '2',
   text: 'Dentist appointment',
   location: '',
-  date: '12/15/19',
-  time: '10:00',
+  date: '12/15/19 10:00',
   list: 'Appointments',
   createdAt: new Date()
 
@@ -31,8 +29,7 @@ export default [{
   id: '4',
   text: 'Lunch with Sally',
   location: '',
-  date: '12/13/19',
-  time: '13:00',
+  date: '12/13/19 13:00',
   list: '',
   createdAt: new Date()
 }]

@@ -1,6 +1,7 @@
 import React from 'react'
-import { Container, Header, List } from 'semantic-ui-react'
-
+import { Button, Container, Header, List } from 'semantic-ui-react'
+import ReminderList from '../../components/reminder-list/ReminderList'
+import ListList from '../../components/list-list/ListList'
 import './home-page.styles.css'
 
 const HomePage = () => (
@@ -9,17 +10,16 @@ const HomePage = () => (
       <section id='reminders'>
         <Header as='h2'>Reminders</Header>
         <List celled>
-          <List.Item>Reminder 1</List.Item>
-          <List.Item>Reminder 2</List.Item>
+          <ReminderList />
         </List>
       </section>
       <section id='lists'>
         <Header as='h2'>Lists</Header>
         <List celled>
-          <List.Item>List 1</List.Item>
-          <List.Item>List 2</List.Item>
+          <ListList />
         </List>
       </section>
+      <Button circular icon='plus' floated='right' color='green' />
     </Container>
   </div>
 )
